@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:supervisor/features/features.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -13,6 +15,15 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: BlocConsumer<LoginCubit, LoginState>(
+        builder: (context, state) => const Stack(
+          children: [
+            Background(),
+          ],
+        ),
+        listener: (context, state) {},
+      ),
+    );
   }
 }
