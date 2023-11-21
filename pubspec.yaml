@@ -1,0 +1,47 @@
+name: supervisor
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  get_it: ^7.6.4
+  injectable: ^2.3.2
+  shared_preferences: ^2.2.2
+  connectivity_plus: ^5.0.1
+  dio: ^5.3.3
+  retrofit: ^4.0.3
+  intl: ^0.18.1
+  json_annotation: ^4.8.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  injectable_generator: ^2.4.1
+  build_runner: ^2.4.6
+  lint: ^2.2.0
+  retrofit_generator: ^8.0.4
+  flutter_gen_runner: ^5.3.2
+  flutter_launcher_icons: ^0.13.1
+  json_serializable: ^6.7.1
+  bloc_test: ^9.1.5
+
+flutter_gen:
+  output: lib/generated/
+
+flutter:
+  generate: true
+
+  uses-material-design: true
+
+flutter_intl:
+  enabled: true
+
