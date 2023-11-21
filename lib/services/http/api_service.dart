@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
+import 'package:supervisor/constants/constants.dart';
+import 'package:supervisor/models/models.dart';
 
 part 'api_service.g.dart';
 
@@ -7,63 +9,43 @@ part 'api_service.g.dart';
 abstract class ApiService {
   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
 
-  // @POST("${ApiConstants.authPath}driver-auth")
-  // Future<BaseResponse<LoginResponse>> postLogin(@Body() LoginRequest request);
-  //
-  // @POST("${ApiConstants.analystPath}Tracking")
-  // Future<BaseResponse<EmptyResponse>> postTracking(
-  //   @Body() TrackingRequest request,
-  // );
-  //
-  // @POST("${ApiConstants.driverPath}CheckIn")
-  // Future<BaseResponse<EmptyResponse>> postCico(@Body() CicoRequest request);
-  //
-  // @POST("${ApiConstants.driverPath}get-pre-op-check")
-  // Future<BaseResponse<List<VehicleCheckResponse>>> postVehicleCheckList();
-  //
-  // @POST("${ApiConstants.driverPath}submit-pre-op-check")
-  // Future<BaseResponse<EmptyResponse>> postVehicleCheck(
-  //   @Body() VehicleCheckRequest request,
-  // );
-  //
-  // @POST("${ApiConstants.driverPath}Messages")
-  // Future<BaseResponse<List<MessageResponse>>> postMessage(
-  //   @Body() MessageRequest request,
-  // );
-  //
-  // @POST("${ApiConstants.driverPath}List-Trip-Form")
-  // Future<BaseResponse<List<ListTripFormResponse>>> postListTripForm(
-  //   @Body() ListTripFormRequest request,
-  // );
-  //
-  // @POST("${ApiConstants.driverPath}Trip-Form")
-  // Future<BaseResponse<EmptyResponse>> postTripForm(
-  //   @Body() TripFormRequest request,
-  // );
-  //
-  // @POST("${ApiConstants.transportLocationPath}List")
-  // Future<BaseResponse<List<TransportLocationResponse>>> postTransportLocation();
-  //
-  // @POST("${ApiConstants.driverPath}Schedule")
-  // Future<BaseResponse<List<ScheduleResponse>>> postSchedule(
-  //   @Body() ScheduleRequest request,
-  // );
-  //
-  // @POST("${ApiConstants.leavePath}ListLeaveType")
-  // Future<BaseResponse<List<LeaveTypeResponse>>> postListLeaveType();
-  //
-  // @POST("${ApiConstants.driverPath}request-leave")
-  // Future<BaseResponse<EmptyResponse>> postRequestLeave(
-  //   @Body() LeaveRequest request,
-  // );
-  //
-  // @POST("${ApiConstants.driverPath}SetDriverToken")
-  // Future<BaseResponse<EmptyResponse>> postDriverToken(
-  //   @Body() FcmTokenRequest request,
-  // );
-  //
-  // @POST("${ApiConstants.analystPath}Tracking")
-  // Future<BaseResponse<EmptyResponse>> postAnalystTracking(
-  //   @Body() TrackingRequest request,
-  // );
+  @POST("${ApiConstants.authPath}supervisor-auth")
+  Future<BaseResponse<LoginResponse>> postLogin(@Body() LoginRequest request);
+
+  @POST("${ApiConstants.driverPath}Schedule")
+  Future<BaseResponse<List<ScheduleResponse>>> postSchedule(
+    @Body() ScheduleRequest request,
+  );
+
+  @POST("${ApiConstants.driverPath}Messages")
+  Future<BaseResponse<List<MessageResponse>>> postMessages(
+    @Body() MessageRequest request,
+  );
+
+  @POST("${ApiConstants.driverPath}Find-Replacement")
+  Future<BaseResponse<EmptyResponse>> postReplacement(
+    @Body() ReplacementRequest request,
+  );
+
+  @POST("${ApiConstants.driverPath}Shift-Drop")
+  Future<BaseResponse<EmptyResponse>> postShiftDrop(
+    @Body() ShiftDropRequest request,
+  );
+
+  @POST("${ApiConstants.driverPath}GetTracking")
+  Future<BaseResponse<List<TrackingResponse>>> postTracking(
+    @Body() TrackingRequest request,
+  );
+
+  @POST("${ApiConstants.driverPath}List")
+  Future<BaseResponse<List<DriverResponse>>> postDrivers();
+
+  @POST("${ApiConstants.driverPath}GetShiftLocation")
+  Future<BaseResponse<List<ShiftLocationResponse>>> postShiftLocation();
+
+  @POST("${ApiConstants.driverPath}GetShiftGroup")
+  Future<BaseResponse<List<ShiftGroupResponse>>> postShiftGroup();
+
+  @POST("${ApiConstants.driverPath}ListMasterShiftType")
+  Future<BaseResponse<List<ShiftResponse>>> postShift();
 }
