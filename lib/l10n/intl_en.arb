@@ -1,1 +1,10 @@
-{}
+{
+    "@@locale": "en",
+    "appName": "Scheduling System",
+    "loginTitle": "Login",
+    "usernameHint": "Enter your username",
+    "passwordHint": "Enter your password",
+    "forgotPassword": "Forgot Password?",
+    "loginBtn": "Login",
+    "homeTitle": "Scheduling System"
+}

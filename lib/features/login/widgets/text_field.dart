@@ -32,31 +32,26 @@ class KTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        TextField(
-          controller: controller,
-          obscureText: obscureText,
-          textInputAction: textInputAction,
-          keyboardType: inputType,
-          onChanged: onChanged,
-          focusNode: focusNode,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(borderRadius),
-            ),
-            fillColor: Colors.white,
-            filled: true,
-            contentPadding: contentPadding ??
-                const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
-            hintText: hint,
-            suffixIcon: suffixIcon,
-            prefixIcon: prefixIcon,
-          ),
-          onEditingComplete: onEditingComplete,
+    return TextField(
+      controller: controller,
+      obscureText: obscureText,
+      textInputAction: textInputAction,
+      keyboardType: inputType,
+      onChanged: onChanged,
+      focusNode: focusNode,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(borderRadius),
         ),
-      ],
+        fillColor: Colors.white,
+        filled: true,
+        contentPadding: contentPadding ??
+            const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+        hintText: hint,
+        suffixIcon: suffixIcon,
+        prefixIcon: prefixIcon,
+      ),
+      onEditingComplete: onEditingComplete,
     );
   }
 }

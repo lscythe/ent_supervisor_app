@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:supervisor/app/router.dart';
 import 'package:supervisor/app/themes/themes.dart';
 import 'package:supervisor/features/features.dart';
 import 'package:supervisor/generated/l10n.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:supervisor/locator/locator.dart';
 
 class SupervisorApp extends StatefulWidget {

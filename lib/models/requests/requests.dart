@@ -1,3 +1,4 @@
+export 'forgot_password/forgot_password_request.dart';
 export 'login/login_request.dart';
 export 'message/message_request.dart';
 export 'replacement/replacement_request.dart';
